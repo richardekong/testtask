@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_screen_logo_size">100sp</dimen>
+    <dimen name="logo_marginLeft">80sp</dimen>
+    <dimen name="avatar_margin_start">25dp</dimen>
+    <dimen name="avatar_width">100dp</dimen>
+    <dimen name="aboveAvatar">25dp</dimen>
+    <dimen name="aboveName">30sp</dimen>
+    <dimen name="avatar_height">100dp</dimen>
+    <dimen name="marginTop">50dp</dimen>
+    <dimen name="leftOf_avatar">15sp</dimen>
+    <dimen name="text_size">10sp</dimen>
+    <dimen name="under_name">20sp</dimen>
+    <dimen name="infomarginLeft">20sp</dimen>
+    <dimen name="infoMarginTop">50sp</dimen>
+    <dimen name="rowHeight">150dp</dimen>
+    <dimen name="aboveInfo">100sp</dimen>
+    <dimen name="userDetailLeft">30sp</dimen>
+    <dimen name="userDetailTop">30sp</dimen>
+    <dimen name="userDetail_textsize">20sp</dimen>
+
+</resources>

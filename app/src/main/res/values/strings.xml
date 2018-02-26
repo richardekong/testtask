@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">testtask</string>
+    <string name="splashScreenText">Logo</string>
+    <string name="usersBaseUrl">http://jsonplaceholder.typicode.com/</string>
+    <string name="avatarBaseUrl">https://avatars.io</string>
+    <string name="UserScreenTitle">Users</string>
+    <string name="userDetailsTitle">User Details</string>
+
+</resources>
