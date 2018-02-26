@@ -9,7 +9,7 @@
     <dimen name="avatar_height">100dp</dimen>
     <dimen name="marginTop">50dp</dimen>
     <dimen name="leftOf_avatar">15sp</dimen>
-    <dimen name="text_size">15sp</dimen>
+    <dimen name="text_size">10sp</dimen>
     <dimen name="under_name">20sp</dimen>
     <dimen name="infomarginLeft">20sp</dimen>
     <dimen name="infoMarginTop">50sp</dimen>
