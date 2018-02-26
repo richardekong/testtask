@@ -89,4 +89,11 @@ public class userDetails extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Call unsuccessful", Toast.LENGTH_LONG).show();
         }
     }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        if(webView!=null){
+            webView.destroy();
+        }
+    }
 }
