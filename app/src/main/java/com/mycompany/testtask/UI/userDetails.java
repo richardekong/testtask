@@ -61,7 +61,7 @@ public class userDetails extends AppCompatActivity {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                webView.loadUrl(webUrl);
+                webView.loadUrl("ambrose.net");
 
             }
         });
