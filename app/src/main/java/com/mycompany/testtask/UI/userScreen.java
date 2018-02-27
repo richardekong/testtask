@@ -1,11 +1,13 @@
 package com.mycompany.testtask.UI;
 
 import android.graphics.Bitmap;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.mycompany.testtask.R;
@@ -23,7 +25,6 @@ import retrofit2.Response;
 public class userScreen extends AppCompatActivity {
     //instance variable declaration
     public static String usersBaseUrl = "http://jsonplaceholder.typicode.com";
-    public static String avatarBaseUrl = "https://avatars.io";
     public static List<User> users;
     public static List<Bitmap> userAvatars;
     private RecyclerView recyclerView;
@@ -64,7 +65,7 @@ public class userScreen extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-                Toast.makeText(getApplication().getBaseContext(),t.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplication().getBaseContext(),"Failed to establish connection",Toast.LENGTH_LONG).show();
             }
         });
         //set row division
