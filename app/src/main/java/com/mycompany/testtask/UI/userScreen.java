@@ -51,7 +51,7 @@ public class userScreen extends AppCompatActivity {
         Call<List<User>> call = serviceApi.getUsers();
         call.enqueue(new Callback<List<User>>() {
             @Override
-            public void onResponse(Call<List<User>> call, final Response<List<User>> response) {
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 //check for successful response
                 if(response.isSuccessful()) {
                     //initialized the list of users from the response

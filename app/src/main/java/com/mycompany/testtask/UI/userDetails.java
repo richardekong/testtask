@@ -13,10 +13,16 @@ import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.mycompany.testtask.R;
 
 
-public class userDetails extends AppCompatActivity {
+public class userDetails extends AppCompatActivity implements OnMapReadyCallback {
     //instance variable declaration
     private TextView nameText;
     private TextView emailText;
@@ -24,6 +30,7 @@ public class userDetails extends AppCompatActivity {
     private WebView webView;
     private Bundle passedDetails;
     private String webUrl;
+    private GoogleMap mMap;
     @Override
     public void onCreate(Bundle saveInstanceState)
     {
@@ -36,6 +43,10 @@ public class userDetails extends AppCompatActivity {
         emailText=findViewById(R.id.emailDetail);
         phoneText=findViewById(R.id.phoneDetail);
         webView=findViewById(R.id.website);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
         //display user details from the previous activity
         nameText.setText(passedDetails.getString("NAME"));
         emailText.setText(passedDetails.getString("EMAIL"));
@@ -61,7 +72,7 @@ public class userDetails extends AppCompatActivity {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                webView.loadUrl("ambrose.net");
+                webView.loadUrl(webUrl);
 
             }
         });
@@ -88,6 +99,16 @@ public class userDetails extends AppCompatActivity {
         catch (SecurityException e){
             Toast.makeText(getApplicationContext(),"Call unsuccessful", Toast.LENGTH_LONG).show();
         }
+    }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        Double lng=Double.parseDouble(passedDetails.getString("LONGITUDE"));
+        Double lat=Double.parseDouble(passedDetails.getString("LATITUDE"));
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(lat, lng);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
     @Override
     protected void onDestroy(){
