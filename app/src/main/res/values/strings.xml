@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">testtask</string>
+    <string name="app_name">Test task</string>
     <string name="splashScreenText">Logo</string>
     <string name="usersBaseUrl">http://jsonplaceholder.typicode.com/</string>
     <string name="avatarBaseUrl">https://avatars.io</string>
